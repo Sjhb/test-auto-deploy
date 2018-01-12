@@ -6,6 +6,8 @@
   "scripts": {
     "build": "webpack --config config/webpack.prod.js",
     "dev": "webpack-dev-server --open --config config/webpack.dev.js",
+    "deploy": "webpack --config config/webpack.prod.js&&node upload.js production",
+    "predeploy": "webpack --config config/webpack.prod.js&&node upload.js preproduction",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

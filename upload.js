@@ -1,12 +1,21 @@
 const fs = require('fs')
 const path = require('path')
 const upyun = require('upyun')
-const upyunConfig = {
+const uploadEnv = process.argv[2]
+const upyunConfigCommon = {
   bucket: 'nb-static',
   operator: 'whmanlin',
   password: 'whmanlin',
   path: ''
 }
+
+const upyunConfigPre = {
+  bucket: 'nb-static-pre',
+  operator: 'whmanlin',
+  password: 'whmanlin',
+  path: ''
+}
+const upyunConfig = uploadEnv === 'production' ? upyunConfigCommon : upyunConfigPre
 const root = './dist'
 // 利用upyun包准备上传工具
 const service = new upyun.Service(upyunConfig.bucket, upyunConfig.operator, upyunConfig.password)
