@@ -2,9 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const upyun = require('upyun')
 const upyunConfig = {
-  bucket: 'fed-galaxy',
-  operator: 'maintooa',
-  password: 'TCI7t3PxKb',
+  bucket: 'nb-static',
+  operator: 'whmanlin',
+  password: 'whmanlin',
   path: ''
 }
 const root = './dist'
@@ -17,14 +17,14 @@ function uploadFile (remotePath, localPath, client) {
   try {
     file = fs.readFileSync(localPath)
   } catch (err) {
-    console.log('\x1b[35m' + localPath + '\t上传失败')
+    console.log('\x1b[35m' + localPath + '\t上传失败\x1b[0m')
     return false
   }
   let uploadRes = client.putFile(remotePath, file)
   uploadRes.then(() => {
-    console.log('\x1b[32m' + localPath + '\t上传成功')
+    console.log('\x1b[32m' + localPath + '\t上传成功\x1b[0m')
   }).catch(() => {
-    console.log('\x1b[35m' + localPath + '\t上传失败')
+    console.log('\x1b[35m' + localPath + '\t上传失败\x1b[0m')
   })
 }
 
