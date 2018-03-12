@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/home.vue'
-import infiniteScroll from '@/example/infiniteScroll.vue'
-import checkbox from '@/example/checkbox.vue'
-import radio from '@/example/radio.vue'
+import repConfig from '@/views/repConfig.vue'
 
 Vue.use(Router)
 
@@ -13,16 +11,8 @@ export default new Router({
     component: home,
     name: 'home'
   }, {
-    path: '/infiniteScroll',
-    component: infiniteScroll,
-    name: 'infiniteScroll'
-  }, {
-    path: '/checkbox',
-    component: checkbox,
-    name: 'checkbox'
-  }, {
-    path: '/radio',
-    component: radio,
-    name: 'radio'
+    path: '/repConfig',
+    component: repConfig,
+    name: 'repConfig'
   }]
 })
