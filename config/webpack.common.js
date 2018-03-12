@@ -104,6 +104,8 @@ module.exports = {
       hash: true,
       cache: true
     }),
-    new CleanWebpackPlugin([path.resolve(__dirname, '..', 'dist')])
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '..')
+    })
   ]
 }
